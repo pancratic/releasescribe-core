@@ -31,7 +31,8 @@
   ],
   "scripts": {
     "build": "esbuild src/cli.ts --bundle --platform=node --format=esm --outfile=dist/cli.js && chmod +x dist/cli.js",
-    "test": "node --experimental-strip-types --test test/core.test.ts"
+    "test": "node --experimental-strip-types --test test/core.test.ts",
+    "prepublishOnly": "npm run build"
   },
   "engines": {
     "node": ">=18"
