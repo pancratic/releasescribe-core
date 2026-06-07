@@ -1,0 +1,42 @@
+{
+  "name": "releasescribe-core",
+  "version": "0.1.0",
+  "description": "Generate clean, categorized changelogs & release notes from git history and conventional commits. The open-source core of ReleaseScribe.",
+  "license": "MIT",
+  "author": "Pancratic Enterprises",
+  "homepage": "https://github.com/pancratic/releasescribe-core",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pancratic/releasescribe-core.git"
+  },
+  "bugs": {
+    "url": "https://github.com/pancratic/releasescribe-core/issues"
+  },
+  "keywords": [
+    "changelog",
+    "release-notes",
+    "conventional-commits",
+    "git",
+    "semantic-versioning",
+    "changelog-generator"
+  ],
+  "type": "module",
+  "bin": {
+    "releasescribe": "dist/cli.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "esbuild src/cli.ts --bundle --platform=node --format=esm --outfile=dist/cli.js && chmod +x dist/cli.js",
+    "test": "node --experimental-strip-types --test test/core.test.ts"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "devDependencies": {
+    "esbuild": "^0.24.0"
+  }
+}
